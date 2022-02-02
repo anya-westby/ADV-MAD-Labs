@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>cuisine</key>
+		<string>New American</string>
+		<key>dishes</key>
+		<array>
+			<string>Cheeseburger</string>
+			<string>French Fries</string>
+			<string>Caesar Salad</string>
+			<string>Mac and Cheese</string>
+			<string>Chicken Fingers</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Indian</string>
+		<key>dishes</key>
+		<array>
+			<string>Chicken Tikkamasala</string>
+			<string>Veggie Samosas</string>
+			<string>Tandoori Chicken</string>
+			<string>Garlic Naan</string>
+			<string>Dal Soup</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Mexican</string>
+		<key>dishes</key>
+		<array>
+			<string>Tacos</string>
+			<string>Burrito</string>
+			<string>Tortilla Soup</string>
+			<string>Taco Salad</string>
+			<string>Quesadilla</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Italian</string>
+		<key>dishes</key>
+		<array>
+			<string>Spaghetti Alla Carbonara</string>
+			<string>Chicken Parmesan</string>
+			<string>Fettuccine Alfredo</string>
+			<string>Cacio e Pepe</string>
+			<string>Lobster Raviolli</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Thai</string>
+		<key>dishes</key>
+		<array>
+			<string>Pad Thai</string>
+			<string>Drunken Noodles</string>
+			<string>Tom Yum Goong</string>
+			<string>Satay</string>
+			<string>Chicken Cashew</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Japanese</string>
+		<key>dishes</key>
+		<array>
+			<string>Miso Soup</string>
+			<string>Salmon Nigiri</string>
+			<string>Tuna Sushi</string>
+			<string>California Roll</string>
+			<string>Udon Noodles</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Chinese</string>
+		<key>dishes</key>
+		<array>
+			<string>Peking Roasted Duck</string>
+			<string>Kung Pao Chicken</string>
+			<string>Ma Po Tofu</string>
+			<string>Sweet and Sour Pork</string>
+			<string>Dumplings</string>
+		</array>
+	</dict>
+</array>
+</plist>
