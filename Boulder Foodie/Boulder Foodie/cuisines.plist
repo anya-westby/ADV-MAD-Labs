@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>cuisine</key>
+		<string>New American</string>
+		<key>restaurants</key>
+		<array>
+			<string>Next Door American Eatery</string>
+			<string>The West End Tavern</string>
+			<string>The Sink</string>
+			<string>Boulder Burger</string>
+			<string>Attic Bar &amp; Bistro</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Chinese</string>
+		<key>restaurants</key>
+		<array>
+			<string>Jin Chan Zhang</string>
+			<string>Haoway Chinese Cafe</string>
+			<string>Flower Pepper</string>
+			<string>Zoe Ma Ma</string>
+			<string>Golden Sun</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>African</string>
+		<key>restaurants</key>
+		<array>
+			<string>Meskerem Restaurant</string>
+			<string>Ras Kassa&apos;s Ethiopian Restaurant</string>
+			<string>Maandeeq East Africa Restaurant</string>
+			<string>Fidel East African Restaurant</string>
+			<string>Africana Restaurant &amp; Cafe</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Indian</string>
+		<key>restaurants</key>
+		<array>
+			<string>Kathmandu</string>
+			<string>Taj Indian Cuisine</string>
+			<string>Tiffins India Cafe</string>
+			<string>Sherpa Restaurant</string>
+			<string>Jaipur</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Japanese</string>
+		<key>restaurants</key>
+		<array>
+			<string>Blowfish</string>
+			<string>Izakaya Amu</string>
+			<string>Hapa</string>
+			<string>Sushi Zanmai</string>
+			<string>Japango</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Italian</string>
+		<key>restaurants</key>
+		<array>
+			<string>Pizzeria Locale</string>
+			<string>Bacco</string>
+			<string>Il Pastaio</string>
+			<string>Sforno</string>
+			<string>Pasta Jay&apos;s</string>
+		</array>
+	</dict>
+	<dict>
+		<key>cuisine</key>
+		<string>Mexican</string>
+		<key>restaurants</key>
+		<array>
+			<string>T/aco</string>
+			<string>Rio Grande</string>
+			<string>Illegal Pete&apos;s</string>
+			<string>Centro</string>
+			<string>Bartaco</string>
+		</array>
+	</dict>
+</array>
+</plist>
