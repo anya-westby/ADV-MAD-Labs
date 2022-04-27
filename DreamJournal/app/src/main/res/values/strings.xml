@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Dream Journal</string>
+    <string name="addDream">Write Down Your Dream</string>
+    <string name="dateHint">Tap Twice to Choose a Date</string>
+    <string name="dreamHint">Dream</string>
+    <string name="add">Add</string>
+    <string name="dreamAdded">Dream Added</string>
+    <string name="action">Action</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete?</string>
+    <string name="deleteDream">Dream Deleted</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
+</resources>
