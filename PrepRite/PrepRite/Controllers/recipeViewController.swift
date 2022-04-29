@@ -12,28 +12,31 @@ import FirebaseFirestoreSwift
 
 class recipeViewController: UIViewController, WKNavigationDelegate {
     
+    var bookmarked = Bool()
+    
     
     @IBOutlet weak var recipeView: WKWebView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var heart: UIBarButtonItem!
+   
     let database = Firestore.firestore()
     
-    var website : String?
-  
-    
-    @IBOutlet weak var heart: UIBarButtonItem!
+    var website: String! = ""
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         recipeView.navigationDelegate = self
+        
         if website == "" {
             loadPage("https://cooking.nytimes.com")
-        }
-        else{
-            loadPage(website!)
+        }else{
+            loadPage(website)
         }
         
-        configureUI()
+        //configureUI()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Bookmark")
 
     }
@@ -52,27 +55,34 @@ class recipeViewController: UIViewController, WKNavigationDelegate {
         spinner.stopAnimating()
     }
     
-    @IBAction func heartPressed(_ sender: UIBarButtonItem) {
-        if heart.title == "heart"{
-            let selectedImage = UIImage(systemName: "heart.fill")
-            heart.title = "heart.fill"
-            heart.image = selectedImage
-//            database.collection("recipeList")
-//                .document()
-//                .update({
-//                    "bookmarked": true
-//                });
-        } else {
-            let selectedImage = UIImage(systemName: "heart")
-            heart.title = "heart"
-            heart.image = selectedImage
-        }
-    }
-    
-    func configureUI(){
-        let normImage = UIImage(systemName: "heart")
-        heart.title = "heart"
-        heart.image = normImage
-    }
+
+////    onSnapShot(): Unlike get() method, this method will be triggered every time data changes in a location that it’s listening for.
+////
+//    @IBAction func heartPressed(_ sender: UIBarButtonItem) {
+//        if heart.title == "heart"{
+//            let selectedImage = UIImage(systemName: "heart.fill")
+//            heart.title = "heart.fill"
+//            heart.image = selectedImage
+//            //update bookmark value in firebase
+//            let ref = database.collection("recipeList")
+//                .whereField("url", isEqualTo: website as Any)
+//            //let ref = database().reference().child("recipeList").child(id)
+//            ref.setData(["bookmarked": true])
+//        } else {
+//            let selectedImage = UIImage(systemName: "heart")
+//            heart.title = "heart"
+//            heart.image = selectedImage
+//            //update bookmark value in firebase
+//            let ref = database.collection("recipeList")
+//                .whereField("url", isEqualTo: website)
+//            ref.updateChildValues(["bookmarked": false])
+//        }
+//    }
+//
+//    func configureUI(){
+//        let normImage = UIImage(systemName: "heart")
+//        heart.title = "heart"
+//        heart.image = normImage
+//    }
 
 }

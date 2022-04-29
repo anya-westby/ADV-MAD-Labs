@@ -12,7 +12,7 @@ import FirebaseFirestoreSwift
 
 class TableViewController: UITableViewController {
     
-    var recipes = [RecipeList]()
+    var recipes = [Recipe]()
     var recipeLoader = RecipeLoader()
     var selectedType: String? = nil
     var selectedPro: String? = nil
@@ -20,7 +20,7 @@ class TableViewController: UITableViewController {
     
     func getInfo(){
         Task{
-            await recipeLoader.loadData()
+            await recipeLoader.showBookmarks()
             recipes = recipeLoader.loadRecipes()
             print("Bookmarks \(recipes.count)")
             tableView.reloadData()
@@ -37,6 +37,7 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
 
     // MARK: - Table view data source
 

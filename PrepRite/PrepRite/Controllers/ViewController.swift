@@ -6,31 +6,32 @@
 //
 
 import UIKit
-import FirebaseFirestore
-import FirebaseFirestoreSwift
-import SwiftUI
+//import FirebaseFirestore
+//import FirebaseFirestoreSwift
+//import SwiftUI
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var mealChoicePicker: UIPickerView!
     @IBOutlet weak var proVegPicker: UIPickerView!
-    let database = Firestore.firestore()
+    //let database = Firestore.firestore()
     //let recipeList = database.collection("recipeList")
-    var recipes = [RecipeList]()
+    var recipes = [Recipe]()
+    var myRecipe = Recipe(id: "", type: "", protein: "", veggie: "", url: "", name: "", bookmarked: false)
     var recipeLoader = RecipeLoader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getInfo()
+        //getInfo()
     }
     
-    func getInfo(){
-        Task{
-            await recipeLoader.loadData()
-            recipes = recipeLoader.loadRecipes()
-        }
-    }
-    
+//    func getInfo(){
+//        Task{
+//            await recipeLoader.loadFirebaseData()
+//            recipes = recipeLoader.loadRecipes()
+//        }
+//    }
+//
     var selectedType: String? = nil
     var selectedPro: String? = nil
     var selectedVeg: String? = nil
@@ -39,42 +40,58 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func unwindSegue(segue: UIStoryboardSegue){
         if segue.identifier == "doneSegue"{
             let source = segue.source as! recipeViewController
+            if source.bookmarked == true{
+                
+            }
         }
     }
     
-    func fetchRecipes(){
-        database.collection("recipeList").getDocuments(completion: { (querySnapshot, err) in
-            if let err = err {
-                print(err.localizedDescription)
-                return
-            } else {
-                for document in querySnapshot!.documents{
-                    let result = Result{
-                        try document.data(as: RecipeList.self)
-                    }
-                    
-                    switch result{
-                    case .success(let recipe):
-                        //let recipe = recipe {
-                        if recipe.type == self.selectedType && recipe.protein == self.selectedPro && recipe.veggie == self.selectedVeg{
-                            self.myurl = recipe.url
-                        } else {
-                            print("document doesnt exist")
-                        }
-                    case .failure(let error):
-                        print("error decoding recipe")
-                    }
-                }
-            }
-        })
-    }
+//    func fetchRecipes(){
+//        database.collection("recipeList").getDocuments(completion: { (querySnapshot, err) in
+//            if let err = err {
+//                print(err.localizedDescription)
+//                return
+//            } else {
+//                for document in querySnapshot!.documents{
+//                    let result = Result{
+//                        try document.data(as: Recipe.self)
+//                    }
+//
+//                    switch result{
+//                    case .success(let recipe):
+//                        //let recipe = recipe {
+//                        if recipe.type == self.selectedType && recipe.protein == self.selectedPro && recipe.veggie == self.selectedVeg{
+//                            self.myurl = recipe.url
+//                        } else {
+//                            print("document doesnt exist")
+//                        }
+//                    case .failure(let error):
+//                        print("error decoding recipe")
+//                    }
+//                }
+//            }
+//        })
+//    }
     
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail"{
-            let recipeView = segue.destination as! recipeViewController
-            fetchRecipes()
-            recipeView.website = myurl
+            let recipeVC = segue.destination as! recipeViewController
+            Task{
+                await recipeLoader.getMyRecipe(selectedType: selectedType!, selectedPro: selectedPro!, selectedVeg: selectedVeg!)
+                let recipe = recipeLoader.loadRecipes()
+                
+                recipeVC.website = recipe[0].url
+            }
+            
+            //recipeLoader.getMyRecipe(selectedType: selectedType!, selectedPro: selectedPro!, selectedVeg: selectedVeg!)
+            //myRecipe = recipeLoader.loadMyRecipe()
+            //let recipe = myRecipe
+            //let myRecipe = recipeLoader.getMyRecipe(selectedType: selectedType!, selectedPro: selectedPro!, selectedVeg: selectedVeg!)
+//            let recipeView = segue.destination as! recipeViewController
+//            fetchRecipes()
+//            recipeView.website = myurl
         }
     }
     
@@ -97,8 +114,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if pickerView == proVegPicker{
             if component == 0{
                 return protein.count
-            }
-            else{
+            }else{
                 return veggie.count
             }
         }
@@ -109,8 +125,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if pickerView == proVegPicker{
             if component == 0{
                 return protein[row]
-            }
-            else{
+            }else{
                 return veggie[row]
             }
         }
@@ -120,8 +135,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == mealChoicePicker{
             selectedType = choice[row]
-        }
-        else if pickerView == proVegPicker{
+        }else if pickerView == proVegPicker{
             selectedPro = protein[row]
             selectedVeg = veggie[row]
         }

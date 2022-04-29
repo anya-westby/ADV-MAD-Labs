@@ -19,7 +19,7 @@
 		B6ED946627E7E1390054A9C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ED946527E7E1390054A9C5 /* Assets.xcassets */; };
 		B6ED946927E7E1390054A9C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6ED946727E7E1390054A9C5 /* LaunchScreen.storyboard */; };
 		B6ED947327E7EC970054A9C5 /* recipeList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6ED947227E7EC970054A9C5 /* recipeList.plist */; };
-		B6ED947527E7F59E0054A9C5 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED947427E7F59E0054A9C5 /* RecipeList.swift */; };
+		B6ED947527E7F59E0054A9C5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED947427E7F59E0054A9C5 /* Recipe.swift */; };
 		B6ED947727E7F6150054A9C5 /* RecipeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED947627E7F6150054A9C5 /* RecipeLoader.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		B6ED946827E7E1390054A9C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6ED946A27E7E1390054A9C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6ED947227E7EC970054A9C5 /* recipeList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = recipeList.plist; sourceTree = "<group>"; };
-		B6ED947427E7F59E0054A9C5 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
+		B6ED947427E7F59E0054A9C5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		B6ED947627E7F6150054A9C5 /* RecipeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeLoader.swift; sourceTree = "<group>"; };
 		B6ED947B27E80BD80054A9C5 /* Jonesy-Script.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jonesy-Script.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +87,7 @@
 		B69A95142811572900CE4DA5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B6ED947427E7F59E0054A9C5 /* RecipeList.swift */,
+				B6ED947427E7F59E0054A9C5 /* Recipe.swift */,
 				B6ED947627E7F6150054A9C5 /* RecipeLoader.swift */,
 			);
 			path = Data;
@@ -215,7 +215,7 @@
 				B69A95162811598400CE4DA5 /* TableViewController.swift in Sources */,
 				B6ED947727E7F6150054A9C5 /* RecipeLoader.swift in Sources */,
 				B69A951028114ECC00CE4DA5 /* recipeViewController.swift in Sources */,
-				B6ED947527E7F59E0054A9C5 /* RecipeList.swift in Sources */,
+				B6ED947527E7F59E0054A9C5 /* Recipe.swift in Sources */,
 				B6ED945D27E7E1370054A9C5 /* AppDelegate.swift in Sources */,
 				B6ED945F27E7E1370054A9C5 /* SceneDelegate.swift in Sources */,
 			);
